@@ -5,4 +5,4 @@ docker push ngocairo/server:$VERSION
 
 kubectl apply -f k8s_prod
 
-kubectl set image deployment server-deployment server=ngocairo/server:$VERSION
+kubectl set image deployments/server-deployment server=ngocairo/server:$VERSION
