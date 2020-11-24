@@ -26,7 +26,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
-  - echo "skipping tests"
+  - echo "skipping test"
 
 deploy:
   provider: script
