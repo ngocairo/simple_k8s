@@ -11,13 +11,13 @@ env:
     - VERSION=$(git rev-parse HEAD)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_248d61edfafe_key -iv $encrypted_248d61edfafe_iv -in service_account.json.enc -out service_account.json -d
+  - openssl aes-256-cbc -K $encrypted_3dafd2320efd_key -iv $encrypted_3dafd2320efd_iv -in new-trvis.json.enc -out new-trvis.json -d
 
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
 
-  - gcloud auth activate-service-account --key-file service_account.json
+  - gcloud auth activate-service-account --key-file new-trvis.json
 
   - gcloud config set project simple-k8s-6689
   - gcloud config set compute/zone asia-east1-c
