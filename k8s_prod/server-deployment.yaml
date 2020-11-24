@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: router
+  template:
+    metadata:
+      labels:
+        name: router
+    spec:
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: pvc
+      containers:
+        - name: server
+          image: ngocairo/server
+          ports:
+            - containerPort: 6689
+          volumeMounts:
+            - name: database-storage
+              mountPath: /app/database
+              subPath: save_folder

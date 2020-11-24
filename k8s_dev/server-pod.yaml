@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server-pod
+  labels:
+    name: router
+spec:
+  containers:
+    - name: visitor-counter
+      image: nguyenbaongoc/simple_k8s
+      ports:
+        - containerPort: 6689
