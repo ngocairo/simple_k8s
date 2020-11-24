@@ -36,11 +36,7 @@ def main():
     count = get_number_of_visitor()
     count += 1
     write_int_to_txt(count)
-    client_ip = flask.request.environ.get(
-        'HTTP_X_REAL_IP', flask.request.remote_addr)
-    # client_ip = flask.request.headers.get(
-    #     'X-Forwarded-For', flask.request.remote_addr)
-    return f'Your IP Address: ? - Number of visitors: {client_ip} - made by ngoc.airo@gmail.com'
+    return f'Number of visitors: {count} - made by ngoc.airo@gmail.com'
 
 
 if __name__ == "__main__":
