@@ -36,7 +36,7 @@ def main():
     count = get_number_of_visitor()
     count += 1
     write_int_to_txt(count)
-    return f'Number of visitors: {count} - made by ngoc.airo@gmail.com'
+    return f'Fuck that shit !!! - Number of visitors: {count} - made by ngoc.airo@gmail.com'
 
 
 if __name__ == "__main__":
